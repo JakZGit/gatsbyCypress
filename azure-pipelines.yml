@@ -39,7 +39,7 @@ steps:
   displayName: 'run cypress'
 
 - script: |
-    npm run merge:reports
+    npm run merge-reports
   condition: succeededOrFailed()
   displayName: 'run cypress and merge reports'
 
