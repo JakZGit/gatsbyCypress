@@ -32,6 +32,11 @@ steps:
     cliSources: 'src'
     javascript.lcov.reportPaths: 'coverage/lcov.info'
 
+- script: |
+    npm run dev
+  displayName: 'run cypress'
+
+
 # Add your build task(s) here
 
 - task: SonarCloudAnalyze@1
