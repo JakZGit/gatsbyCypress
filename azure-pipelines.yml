@@ -17,4 +17,27 @@ steps:
 
 - script: |
     npm install
-  displayName: 'npm install'
+    npm run build
+  displayName: 'npm install and build'
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'JakZGit_gatsbyCypress'
+    organization: 'jakzgit'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'JakZGit_gatsbyCypress'
+    cliProjectName: 'gatsbyCypress'
+    cliProjectVersion: '1.0'
+    cliSources: 'src'
+    javascript.lcov.reportPaths: 'coverage/lcov.info'
+
+# Add your build task(s) here
+
+- task: SonarCloudAnalyze@1
+
+# Uncomment the next task to wait until SonarCloud processing has
+# finished and to publish the result on the Pipeline build summary
+- task: SonarCloudPublish@1
+ inputs:
+   pollingTimeoutSec: '300'
