@@ -3,7 +3,7 @@
   "fixturesFolder": false,
   "reporter": "junit",
   "reporterOptions": {
-    "mochaFile": "results/my-test-output.xml",
+    "mochaFile": "results/result-[hash].xml",
     "toConsole": true
   }
 }

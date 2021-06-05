@@ -43,7 +43,7 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'results/*.xml'
-    #mergeTestResults: false # Optional
+    mergeTestResults: true
     failTaskOnFailedTests: true
 
 
