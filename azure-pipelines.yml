@@ -30,19 +30,7 @@ steps:
     cliProjectName: 'gatsbyCypress'
     cliProjectVersion: '1.0'
     cliSources: 'src'
-    javascript.lcov.reportPaths: 'coverage/lcov.info'
 
 - script: |
     npm run dev
   displayName: 'run cypress'
-
-
-# Add your build task(s) here
-
-- task: SonarCloudAnalyze@1
-
-# Uncomment the next task to wait until SonarCloud processing has
-# finished and to publish the result on the Pipeline build summary
-- task: SonarCloudPublish@1
- inputs:
-   pollingTimeoutSec: '300'
