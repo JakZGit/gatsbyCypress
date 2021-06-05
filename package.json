@@ -22,11 +22,21 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/register": "^7.13.16",
     "@cypress/code-coverage": "3.8.5",
     "babel-plugin-istanbul": "6.0.0",
     "babel-preset-gatsby": "0.8.0",
     "cypress": "6.0.1",
+    "junit-report-merger": "^2.2.2",
     "prettier": "2.1.2",
     "start-server-and-test": "1.11.6"
   },
