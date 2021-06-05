@@ -47,8 +47,7 @@ steps:
   condition: succeededOrFailed()
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: 'results/combined.xml'
-    mergeTestResults: true
+    testResultsFiles: 'combined.xml'
     failTaskOnFailedTests: true
 
 
