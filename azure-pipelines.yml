@@ -36,7 +36,8 @@ steps:
 
 - script: |
     npm run dev
-  displayName: 'run cypress'
+    npm run merge-reports
+  displayName: 'run cypress and merge reports'
 
 - task: PublishTestResults@2
   condition: succeededOrFailed()
