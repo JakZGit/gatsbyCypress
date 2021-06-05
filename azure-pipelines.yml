@@ -36,7 +36,10 @@ steps:
 
 - script: |
     npm run dev
-    npm run merge-reports
+  displayName: 'run cypress'
+
+- script: |
+    npm run merge:reports
   displayName: 'run cypress and merge reports'
 
 - task: PublishTestResults@2
