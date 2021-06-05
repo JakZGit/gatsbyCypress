@@ -30,7 +30,8 @@ steps:
     cliProjectName: 'gatsbyCypress'
     cliProjectVersion: '1.0'
     cliSources: 'src'
-    javascript.lcov.reportPaths: 'coverage/lcov.info'
+    extraProperties: |
+      sonar.javascript.lcov.reportPaths: coverage/lcov.info
 
 - script: |
     npm run dev
