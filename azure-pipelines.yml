@@ -38,6 +38,14 @@ steps:
     npm run dev
   displayName: 'run cypress'
 
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'results/*.xml'
+    #mergeTestResults: false # Optional
+    failTaskOnFailedTests: true
+
+
 - task: SonarCloudAnalyze@1
 
 # Uncomment the next task to wait until SonarCloud processing has
