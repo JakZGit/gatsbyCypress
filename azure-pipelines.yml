@@ -42,5 +42,5 @@ steps:
 # Uncomment the next task to wait until SonarCloud processing has
 # finished and to publish the result on the Pipeline build summary
 - task: SonarCloudPublish@1
- inputs:
+  inputs:
    pollingTimeoutSec: '300'
