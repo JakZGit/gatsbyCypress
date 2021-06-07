@@ -38,16 +38,11 @@ steps:
     npm run dev
   displayName: 'run cypress'
 
-- script: |
-    npm run merge-reports
-  condition: succeededOrFailed()
-  displayName: 'run cypress and merge reports'
-
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: 'results/combined.xml'
+    testResultsFiles: 'results/*.xml'
     failTaskOnFailedTests: true
 
 
