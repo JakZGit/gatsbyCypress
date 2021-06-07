@@ -4,5 +4,5 @@
 import { add } from '../../src/funcs'
 
 it("adds two numbers", () => {
-  expect(add(1,2)).to.equal(4)
+  expect(add(1,2)).to.equal(3)
 })
