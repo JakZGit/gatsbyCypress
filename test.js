@@ -8,7 +8,7 @@ async function testing() {
 }
 
 testing().catch((err) => {
-	throw err
+	console.error(err)
 	process.exit(1);
 });
 
