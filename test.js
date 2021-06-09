@@ -7,5 +7,8 @@ async function testing() {
 }
 
 testing().catch((err) => {
-	throw err
+	// throw err
+	process.exit(1);
+	console.log("testing")
 });
+
