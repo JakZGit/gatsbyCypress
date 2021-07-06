@@ -6,7 +6,7 @@ jobs:
       - name: git-sync
         uses: wei/git-sync@v3
         with:
-          source_repo: "JakZGit/gatsbyCypress"
+          source_repo: "git@github.com:JakZGit/gatsbyCypress.git"
           source_branch: "*"
-          destination_repo: "JakZGit/gatsbyCypress-Clone"
+          destination_repo: "git@github.com:JakZGit/gatsbyCypress-Clone.git"
           destination_branch: "*"
