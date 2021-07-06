@@ -10,3 +10,4 @@ jobs:
           source_branch: "*"
           destination_repo: "git@github.com:JakZGit/gatsbyCypress-Clone.git"
           destination_branch: "*"
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
