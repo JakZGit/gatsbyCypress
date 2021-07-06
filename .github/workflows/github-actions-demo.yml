@@ -8,5 +8,5 @@ jobs:
           git clone --bare git@github.com:JakZGit/gatsbyCypress.git
           cd gatsbyCypress
           git push --mirror git@github.com:JakZGit/gatsbyCypress-Clone.git
-        with:
+        env:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
