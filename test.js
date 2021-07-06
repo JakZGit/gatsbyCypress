@@ -9,6 +9,7 @@ async function testing() {
 
 testing().catch((err) => {
 	console.error(err)
+	console.log("testing 2")
 	process.exit(1);
 });
 
