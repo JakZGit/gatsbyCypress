@@ -10,4 +10,4 @@ jobs:
         target_repo_url:
           git@github.com:JakZGit/gatsbyCypress-Clone.git
         ssh_private_key:                                # <-- use 'secrets' to pass credential information.
-          ${{ secrets.SSH_PRIVATE_KEY }}
+          ${{ secrets.SSH_PRIVATE_KEY_CLONE }}
