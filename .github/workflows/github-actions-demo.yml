@@ -1,13 +1,11 @@
 on: [push, delete]
 
 jobs:
-  sync job repo:
+  SYNC_REPO_BLOG:
     runs-on: ubuntu-18.04
     steps:                                              # <-- must use actions/checkout@v1 before mirroring!
     - uses: actions/checkout@v1
     - uses: pixta-dev/repository-mirroring-action@v1
       with:
-        target_repo_url:
-          git@github.com:JakZGit/gatsbyCypress-Clone.git
-        ssh_private_key:                                # <-- use 'secrets' to pass credential information.
-          ${{ secrets.SSH_PRIVATE_KEY_CLONE }}
+        target_repo_url: git@github.com:JakZGit/gatsbyCypress-Clone.git
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY_CLONE }}
