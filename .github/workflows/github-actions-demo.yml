@@ -1,7 +1,7 @@
 on: [push, delete]
 
 jobs:
-  SYNC_REPO_BLOG:
+  sync job repo:
     runs-on: ubuntu-18.04
     steps:                                              # <-- must use actions/checkout@v1 before mirroring!
     - uses: actions/checkout@v1
