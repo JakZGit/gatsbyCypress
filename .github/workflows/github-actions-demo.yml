@@ -21,7 +21,7 @@ jobs:
           git@github.com:JakZGit/gatsbyCypress-Clone2.git
         ssh_private_key:                                # <-- use 'secrets' to pass credential information.
           ${{ secrets.SSH_PRIVATE_KEY_BLOG }}
-  to_careers:
+  to_career:
     runs-on: ubuntu-18.04
     steps:                                              # <-- must use actions/checkout@v1 before mirroring!
     - uses: actions/checkout@v1
