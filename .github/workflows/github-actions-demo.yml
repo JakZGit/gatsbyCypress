@@ -5,8 +5,6 @@ on:
       - development
       - staging
       - feature/testing-7
-  delete:
-
 
 jobs:
   to_blog:
