@@ -1,11 +1,11 @@
 on:
-  delete
   push:
     branches:
       - master
       - development
       - staging
       - feature/testing-7
+  delete:
 
 
 jobs:
