@@ -1,9 +1,12 @@
 on:
+  delete
   push:
     branches:
       - master
       - development
       - staging
+      - feature/testing-7
+
 
 jobs:
   to_blogs:
