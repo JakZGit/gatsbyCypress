@@ -1,7 +1,7 @@
 on: [push, delete]
 
 jobs:
-  to_blog:
+  to_blogs:
     runs-on: ubuntu-18.04
     steps:                                              # <-- must use actions/checkout@v1 before mirroring!
     - uses: actions/checkout@v1
