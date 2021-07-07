@@ -1,4 +1,9 @@
-on: [push, delete]
+on:
+  push:
+    branches:
+      - master
+      - development
+      - staging
 
 jobs:
   to_blogs:
