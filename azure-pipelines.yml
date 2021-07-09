@@ -46,14 +46,12 @@ steps:
     testResultsFiles: 'results/*.xml'
     failTaskOnFailedTests: true
 
-
 - task: PublishPipelineArtifact@0
-  displayName: 'Publish Videos (Cypress)'
+  displayName: 'Publish Screenshots (Cypress)'
   condition: failed()
   inputs:
-    artifactName: 'videos'
-    targetPath: '$(Build.SourcesDirectory)/cypress/videos'
-
+    artifactName: 'screenshots'
+    targetPath: '$(Build.SourcesDirectory)/cypress/screenshots'
 
 - task: SonarCloudAnalyze@1
 
