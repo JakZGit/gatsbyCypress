@@ -52,7 +52,7 @@ steps:
   condition: failed()
   inputs:
     artifactName: 'videos'
-    targetPath: 'cypress/videos'
+    targetPath: '$(Build.SourcesDirectory)/test/e2e/videos'
 
 
 - task: SonarCloudAnalyze@1
