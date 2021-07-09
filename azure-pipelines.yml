@@ -47,6 +47,14 @@ steps:
     failTaskOnFailedTests: true
 
 
+- task: PublishPipelineArtifact@0
+  displayName: 'Publish Videos (Cypress)'
+  condition: failed()
+  inputs:
+    artifactName: 'videos'
+    targetPath: 'cypress/videos'
+
+
 - task: SonarCloudAnalyze@1
 
 # Uncomment the next task to wait until SonarCloud processing has
