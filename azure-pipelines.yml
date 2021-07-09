@@ -43,7 +43,7 @@ steps:
   condition: succeededOrFailed()
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: 'results/*.xml'
+    testResultsFiles: '$(Build.SourcesDirectory)/results/*.xml'
     failTaskOnFailedTests: true
 
 - task: PublishPipelineArtifact@0
