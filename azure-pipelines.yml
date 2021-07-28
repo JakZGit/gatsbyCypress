@@ -8,6 +8,8 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+variables:
+  - group: testing
 
 steps:
 - task: NodeTool@0
@@ -16,47 +18,42 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    yarn install
+  env:
+    NPM_TOKEN: '$(NPM_TOKEN)'
+  displayName: 'yarn install'
 
-- task: SonarCloudPrepare@1
-  inputs:
-    SonarCloud: 'Sonarcloud'
-    organization: 'jakzgit'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'JakZGit_gatsbyCypress'
-    cliProjectName: 'gatsbyCypress'
-    cliProjectVersion: '1.0'
-    cliSources: 'src'
-    extraProperties: |
-      sonar.javascript.lcov.reportPaths=./coverage/lcov.info
-      sonar.javascript.node.maxspace=8192
+# - task: SonarCloudPrepare@1
+#   inputs:
+#     SonarCloud: 'Sonarcloud'
+#     organization: 'jakzgit'
+#     scannerMode: 'CLI'
+#     configMode: 'manual'
+#     cliProjectKey: 'JakZGit_gatsbyCypress'
+#     cliProjectName: 'gatsbyCypress'
+#     cliProjectVersion: '1.0'
+#     cliSources: 'src'
+#     extraProperties: |
+#       sonar.javascript.lcov.reportPaths=./coverage/lcov.info
+#       sonar.javascript.node.maxspace=8192
 
-- script: |
-    npm run dev
-  displayName: 'run cypress'
+# - script: |
+#     npm run dev
+#   displayName: 'run cypress'
 
 
-- task: PublishTestResults@2
-  condition: succeededOrFailed()
-  inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '$(Build.SourcesDirectory)/results/*.xml'
-    failTaskOnFailedTests: true
+# - task: PublishTestResults@2
+#   condition: succeededOrFailed()
+#   inputs:
+#     testResultsFormat: 'JUnit'
+#     testResultsFiles: 'results/*.xml'
+#     failTaskOnFailedTests: true
 
-- task: PublishPipelineArtifact@0
-  displayName: 'Publish Screenshots (Cypress)'
-  condition: failed()
-  inputs:
-    artifactName: 'screenshots'
-    targetPath: '$(Build.SourcesDirectory)/cypress/screenshots'
 
-- task: SonarCloudAnalyze@1
+# - task: SonarCloudAnalyze@1
 
-# Uncomment the next task to wait until SonarCloud processing has
-# finished and to publish the result on the Pipeline build summary
-- task: SonarCloudPublish@1
-  inputs:
-   pollingTimeoutSec: '300'
+# # Uncomment the next task to wait until SonarCloud processing has
+# # finished and to publish the result on the Pipeline build summary
+# - task: SonarCloudPublish@1
+#   inputs:
+#    pollingTimeoutSec: '300'

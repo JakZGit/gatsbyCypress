@@ -4,9 +4,11 @@ on:
       - master
       - development
       - staging
+      - feature/testing-7
+  delete:
 
 jobs:
-  to_blogs:
+  to_blog:
     runs-on: ubuntu-18.04
     steps:                                              # <-- must use actions/checkout@v1 before mirroring!
     - uses: actions/checkout@v1
@@ -26,3 +28,13 @@ jobs:
           git@github.com:JakZGit/gatsbyCypress-Clone2.git
         ssh_private_key:                                # <-- use 'secrets' to pass credential information.
           ${{ secrets.SSH_PRIVATE_KEY_BLOG }}
+  to_careers:
+    runs-on: ubuntu-18.04
+    steps:                                              # <-- must use actions/checkout@v1 before mirroring!
+    - uses: actions/checkout@v1
+    - uses: pixta-dev/repository-mirroring-action@v1
+      with:
+        target_repo_url:
+          git@github.com:JakZGit/gatsbyCypress-Clone3.git
+        ssh_private_key:                                # <-- use 'secrets' to pass credential information.
+          ${{ secrets.SSH_PRIVATE_KEY_CAREER }}
