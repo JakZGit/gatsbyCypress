@@ -18,7 +18,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    yarn install
+    yarn install --verbose
   env:
     NPM_TOKEN: '$(NPM_TOKEN)'
   displayName: 'yarn install'
