@@ -23,6 +23,10 @@ steps:
     NPM_TOKEN: '$(NPM_TOKEN)'
   displayName: 'yarn install'
 
+- script: |
+    npm run build
+  displayName: 'build'
+
 # - task: SonarCloudPrepare@1
 #   inputs:
 #     SonarCloud: 'Sonarcloud'
