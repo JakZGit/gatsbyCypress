@@ -40,8 +40,7 @@ steps:
   displayName: 'Publish screenshots for failed test'
   condition: failed()
   inputs:
-    artifactName: 'screenshots'
-    targetPath: '$(System.DefaultWorkingDirectory)/cypress/screenshots'
+    targetPath: '$(Pipeline.Workspace)'
 
 
 # - task: PublishTestResults@2
