@@ -2,6 +2,8 @@
   "baseUrl": "http://localhost:8000",
   "fixturesFolder": false,
   "reporter": "junit",
+  "screenshotOnRunFailure": true,
+  "screenshotsFolder": "cypress/screenshots",
   "reporterOptions": {
     "mochaFile": "results/result-[hash].xml",
     "toConsole": true

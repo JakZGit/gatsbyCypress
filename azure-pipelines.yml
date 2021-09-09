@@ -40,7 +40,7 @@ steps:
   displayName: 'Publish screenshots for failed test'
   condition: failed()
   inputs:
-    targetPath: '$(Pipeline.Workspace)'
+    targetPath: '$(Build.SourcesDirectory)'
 
 
 # - task: PublishTestResults@2
