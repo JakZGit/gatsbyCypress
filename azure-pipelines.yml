@@ -40,7 +40,7 @@ steps:
   displayName: 'Publish screenshots for failed test'
   condition: failed()
   inputs:
-    targetPath: '$(Build.SourcesDirectory)'
+    targetPath: '$(Build.SourcesDirectory)/cypress'
 
 
 # - task: PublishTestResults@2
