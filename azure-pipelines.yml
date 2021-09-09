@@ -48,6 +48,7 @@ steps:
   displayName: 'Publish screenshots for failed test'
   condition: failed()
   inputs:
+    artifactName: 'screenshots'
     targetPath: '$(Build.SourcesDirectory)/cypress/screenshots'
 
 
