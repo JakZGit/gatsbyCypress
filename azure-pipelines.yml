@@ -40,7 +40,7 @@ steps:
     npm run dev
   displayName: 'run cypress'
 
-- task: PublishPipelineArtifact@0
+- task: PublishPipelineArtifact@1
   displayName: 'Publish screenshots for failed test'
   condition: failed()
   inputs:
