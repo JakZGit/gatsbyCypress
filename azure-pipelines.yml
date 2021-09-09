@@ -41,11 +41,23 @@ steps:
   displayName: 'run cypress'
 
 - task: PublishPipelineArtifact@1
-  displayName: 'Publish screenshots for failed test'
+  displayName: 'Publish screenshots for failed e2e test'
   condition: failed()
   inputs:
-    artifactName: 'screenshots'
+    artifactName: 'e2e-screenshots'
     targetPath: '$(Build.SourcesDirectory)/cypress/screenshots'
+
+- script: |
+    npm run dev
+  displayName: 'run cypress'
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish screenshots for failed component test'
+  condition: failed()
+  inputs:
+    artifactName: 'component-screenshots'
+    targetPath: '$(Build.SourcesDirectory)/cypress/screenshots'
+
 
 
 # - task: PublishTestResults@2
