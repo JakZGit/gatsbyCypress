@@ -41,7 +41,7 @@ steps:
   condition: failed()
   inputs:
     artifactName: 'screenshots'
-    targetPath: '/cypress/screenshots'
+    targetPath: '$(System.DefaultWorkingDirectory)/cypress/screenshots'
 
 
 # - task: PublishTestResults@2
