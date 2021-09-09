@@ -18,12 +18,6 @@ steps:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
 
-- script: |
-    yarn install
-  env:
-    NPM_TOKEN: '$(NPM_TOKEN)'
-  displayName: 'yarn install'
-
 # - task: SonarCloudPrepare@1
 #   inputs:
 #     SonarCloud: 'Sonarcloud'
@@ -47,7 +41,7 @@ steps:
   condition: failed()
   inputs:
     artifactName: 'screenshots'
-    targetPath: '$(Build.SourcesDirectory)/cypress/screenshots'
+    targetPath: '$(Build.SourcesDirectory)/cypress/screenshots/*'
 
 
 # - task: PublishTestResults@2
