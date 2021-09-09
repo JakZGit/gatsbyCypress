@@ -36,6 +36,10 @@ steps:
     mkdir cypress/screenshots
   displayName: make directory
 
+- script:
+    yarn install
+  displayName: install dependencies
+
 - script: |
     npm run dev
   displayName: 'run cypress'
@@ -44,7 +48,7 @@ steps:
   displayName: 'Publish screenshots for failed test'
   condition: failed()
   inputs:
-    targetPath: '$(Build.SourcesDirectory)/cypress'
+    targetPath: '$(Build.SourcesDirectory)/cypress/screenshots'
 
 
 # - task: PublishTestResults@2
