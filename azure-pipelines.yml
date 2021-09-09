@@ -37,9 +37,16 @@ steps:
 #       sonar.javascript.lcov.reportPaths=./coverage/lcov.info
 #       sonar.javascript.node.maxspace=8192
 
-# - script: |
-#     npm run dev
-#   displayName: 'run cypress'
+- script: |
+    npm run dev
+  displayName: 'run cypress'
+
+- task: PublishPipelineArtifact@0
+  displayName: 'Publish screenshots for failed test'
+  condition: failed()
+  inputs:
+    artifactName: 'screenshots'
+    targetPath: '$(Build.SourcesDirectory)/cypress/screenshots'
 
 
 # - task: PublishTestResults@2
