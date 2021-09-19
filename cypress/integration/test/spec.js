@@ -2,5 +2,5 @@
 // https://on.cypress.io/intelligent-code-completion
 /// <reference types="cypress" />
 it("shows the Hello page", () => {
-  cy.visit("/").contains("Hello waaorld!")
+  cy.visit("/").contains("Hello world!")
 })
