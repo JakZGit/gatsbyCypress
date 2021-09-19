@@ -1,5 +1,6 @@
 module.exports = (on, config) => {
-  if(!process.env.IGNORE_COVERAGE) require("@cypress/code-coverage/task")(on, config)
+  // if(!process.env.IGNORE_COVERAGE) 
+  require("@cypress/code-coverage/task")(on, config)
   // console.log("process.env", process.env.DISABLE_COVERAGE)
 
   // add other tasks to be registered here
