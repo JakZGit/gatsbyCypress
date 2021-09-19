@@ -15,7 +15,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "merge-reports": "jrm results/combined.xml \"results/*.xml\"",
-    "dev": "start-server-and-test develop 8000 cy:run"
+    "dev": "DISABLE_COVERAGE=true start-server-and-test develop 8000 cy:run"
   },
   "dependencies": {
     "gatsby": "^2.26.1",
