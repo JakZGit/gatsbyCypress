@@ -1,7 +1,6 @@
 {
   "baseUrl": "http://localhost:8000",
   "video": false,
-  "retries": 2,
   "testFiles": "**/*.spec.*",
   "viewportHeight": 1200,
   "viewportWidth": 1440
