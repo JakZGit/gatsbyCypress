@@ -27,8 +27,8 @@
     "require": [
       "babel-register"
     ],
-    "sourceMap": false,
-    "instrument": false
+    "sourceMap": true,
+    "instrument": true
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
