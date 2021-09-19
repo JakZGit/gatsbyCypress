@@ -27,13 +27,13 @@
     "require": [
       "babel-register"
     ],
-    "sourceMap": true,
-    "instrument": true
+    "sourceMap": false,
+    "instrument": false
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/register": "^7.13.16",
-    "@cypress/code-coverage": "3.8.5",
+    "@cypress/code-coverage": "3.9.11",
     "babel-plugin-istanbul": "6.0.0",
     "babel-preset-gatsby": "0.8.0",
     "cypress": "7.0.1",
