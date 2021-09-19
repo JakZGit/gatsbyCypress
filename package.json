@@ -31,7 +31,7 @@
     "instrument": false
   },
   "devDependencies": {
-    "@babel/core": "^7.14.3",
+    "@babel/core": "^7.0.0",
     "@babel/register": "^7.13.16",
     "@cypress/code-coverage": "3.8.5",
     "babel-plugin-istanbul": "6.0.0",
